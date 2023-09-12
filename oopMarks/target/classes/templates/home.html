@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+
+    <title>OOP Marks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="form-container">
+    <h1 style="text-align: center">Enter Student OOP Marks</h1>
+    <div class="form-cord">
+        <form th:action="@{/save}" th:object="${student}" th:method="post">
+            <div class="row mb-3">
+                <label for="inputID" class="col-sm-2 col-form-label">Student ID</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{studentId}" id="inputID">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputName" class="col-sm-2 col-form-label">Student Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{studentName}" id="inputName">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputCA" class="col-sm-2 col-form-label">CA</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" th:field="*{caMarks}" id="inputCA">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputPractical" class="col-sm-2 col-form-label">Practical</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" th:field="*{practicalMarks}" id="inputPractical">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputTheory" class="col-sm-2 col-form-label">Theory</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" th:field="*{theoryMarks}" id="inputTheory">
+                </div>
+            </div>
+            <div class="mb-3 d-flex justify-content-center">
+                <button type="submit"  class="btn btn-primary mx-2">Save</button>
+            </div>
+        </form>
+        <div class="mb-3 d-flex justify-content-center">
+            <a class="view-all" th:href="@{/view}">
+                <button type="submit" class="btn btn-primary mx-2">View All Marks</button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
